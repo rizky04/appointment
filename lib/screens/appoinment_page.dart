@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
+import 'package:appointment/components/appointment_card.dart';
 import 'package:appointment/utils/config.dart';
 import 'package:flutter/material.dart';
 
@@ -169,7 +170,19 @@ class _AppointmentPageState extends State<AppointmentPage> {
                             ),
                           ],
                         )]),
-                       
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        ShceduleCardPage(),
+                        const SizedBox(
+                          height: 15,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(child: OutlinedButton(onPressed: (){}, child: const Text('Cancel', style: TextStyle(color: Colors.red),)))
+                          ],
+                        )
                       ],
                     ),),
                   );
@@ -182,3 +195,58 @@ class _AppointmentPageState extends State<AppointmentPage> {
     );
   }
 }
+
+
+
+
+//schedule widget
+class ShceduleCardPage extends StatelessWidget {
+  const ShceduleCardPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.blueAccent,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      width: double.infinity,
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: const <Widget>[
+          Icon(
+            Icons.calendar_today,
+            color: Colors.white,
+            size: 15,
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          Text(
+            'Monday, 11/28/2023',
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(
+            width: 20,
+          ),
+          Icon(
+            Icons.access_alarm,
+            color: Colors.white,
+            size: 17,
+          ),
+          SizedBox(
+            width: 5,
+          ),
+          Flexible(
+              child: Text('2:00',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold)))
+        ],
+      ),
+    );
+  }
+}
+// appointment card is Done
+//THE INFORMATION/DATA HERE WILL BE REPLACED BY API DATA AFRER DATABASE SETUP
