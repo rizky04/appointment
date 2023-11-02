@@ -136,55 +136,83 @@ class _AppointmentPageState extends State<AppointmentPage> {
                   return Card(
                     shape: RoundedRectangleBorder(
                       side: const BorderSide(
-                        color: Colors.grey,
+                        color: Colors.blue,
                       ),
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    margin: !isLastElement ? const EdgeInsets.only(bottom: 20) : EdgeInsets.zero,
-                    child: Padding(padding: const EdgeInsets.all(15),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Row(children: [ CircleAvatar(backgroundImage: AssetImage(_schedule['doctor_profile']),
-                        ),  Config.spaceSmall,
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              _schedule['doctor_name'],
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w700
-                              ),
+                    margin: !isLastElement
+                        ? const EdgeInsets.only(bottom: 20)
+                        : EdgeInsets.zero,
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Row(children: [
+                            CircleAvatar(
+                              backgroundImage:
+                                  AssetImage(_schedule['doctor_profile']),
                             ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              _schedule['category'],
-                              style: const TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ],
-                        )]),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        ShceduleCardPage(),
-                        const SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Expanded(child: OutlinedButton(onPressed: (){}, child: const Text('Cancel', style: TextStyle(color: Colors.red),)))
-                          ],
-                        )
-                      ],
-                    ),),
+                            Config.spaceSmall,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  _schedule['doctor_name'],
+                                  style: const TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  _schedule['category'],
+                                  style: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ]),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          ShceduleCardPage(),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                  child: OutlinedButton(
+                                    style: OutlinedButton.styleFrom(
+                                      backgroundColor: Colors.red,
+                                    ),
+                                      onPressed: () {},
+                                      child: const Text(
+                                        'Cancel',
+                                        style: TextStyle(color: Colors.white),
+                                      ))),
+                                      SizedBox(width: 20,),
+                                      Expanded(
+                                  child: OutlinedButton(
+                                    style: OutlinedButton.styleFrom(
+                                      backgroundColor: Config.primaryColor,
+                                    ),
+                                      onPressed: () {},
+                                      child: const Text(
+                                        'Reschedule',
+                                        style: TextStyle(color: Colors.white),
+                                      )))
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   );
                 }),
               ),
@@ -195,9 +223,6 @@ class _AppointmentPageState extends State<AppointmentPage> {
     );
   }
 }
-
-
-
 
 //schedule widget
 class ShceduleCardPage extends StatelessWidget {
@@ -225,8 +250,7 @@ class ShceduleCardPage extends StatelessWidget {
           ),
           Text(
             'Monday, 11/28/2023',
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             width: 20,
