@@ -17,7 +17,7 @@ class _DoctorDetailState extends State<DoctorDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        appTitle: 'Doctor Detail',
+        appTitle: 'Doctor Details',
         icon: const FaIcon(Icons.arrow_back_ios),
         actions: [
           IconButton(
@@ -26,9 +26,7 @@ class _DoctorDetailState extends State<DoctorDetail> {
                   isFav = !isFav;
                 });
               },
-              icon: FaIcon(isFav
-                  ? Icons.favorite_border
-                  : Icons.favorite_border_outlined, color: Colors.red,))
+              icon: FaIcon(isFav ? Icons.favorite_rounded : Icons.favorite_outline, color: Colors.red,))
         ],
       ),
     );
