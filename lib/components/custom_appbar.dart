@@ -25,7 +25,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
       backgroundColor: Colors.white,
       elevation: 0,
       title: Text(
-        textAlign: TextAlign.center,
         widget.appTitle!,
         style: TextStyle(
           fontSize: 20,
