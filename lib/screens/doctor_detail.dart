@@ -29,6 +29,20 @@ class _DoctorDetailState extends State<DoctorDetail> {
               icon: FaIcon(isFav ? Icons.favorite_rounded : Icons.favorite_outline, color: Colors.red,))
         ],
       ),
+      body: SafeArea(child: Column(
+        children: <Widget>[
+
+        ],
+      )),
     );
+  }
+}
+
+class AboutDoctor extends StatelessWidget {
+  const AboutDoctor({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }

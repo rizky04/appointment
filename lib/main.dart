@@ -1,3 +1,4 @@
+import 'package:appointment/core.dart';
 import 'package:appointment/main_layout.dart';
 import 'package:appointment/screens/auth_page.dart';
 import 'package:appointment/screens/doctor_detail.dart';
