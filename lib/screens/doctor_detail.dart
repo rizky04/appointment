@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, prefer_typing_uninitialized_variables
 
 import 'package:appointment/components/custom_appbar.dart';
+import 'package:appointment/core.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -31,7 +32,7 @@ class _DoctorDetailState extends State<DoctorDetail> {
       ),
       body: SafeArea(child: Column(
         children: <Widget>[
-
+          AboutDoctor(),
         ],
       )),
     );
@@ -43,6 +44,40 @@ class AboutDoctor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    Config().init(context);
+    return Container(
+      width: double.infinity,
+      child: Column(
+        children: <Widget>[
+          const CircleAvatar(
+            radius: 65.0,
+            backgroundImage: AssetImage('assets/avatar.jpg'),
+            backgroundColor: Colors.white,
+          ),
+          Config.spaceMedium,
+          const Text(
+            'Dokter Amin',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Config.spaceSmall,
+          SizedBox(
+            width: Config.widthSize * 0.75,
+            child: const Text(
+              'Universitas Trunojyo madura Pendidikan Informatika 2013',
+              style: TextStyle(
+               color: Colors.grey,
+               fontSize: 15,
+              ),
+              softWrap: true,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
