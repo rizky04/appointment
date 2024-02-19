@@ -69,7 +69,7 @@ class AboutDoctor extends StatelessWidget {
             child: const Text(
               'Universitas Trunojyo madura Pendidikan Informatika 2013',
               style: TextStyle(
-               color: Colors.grey,
+               color: Colors.white,
                fontSize: 15,
               ),
               softWrap: true,
@@ -81,3 +81,75 @@ class AboutDoctor extends StatelessWidget {
     );
   }
 }
+
+
+class DetailBody extends StatelessWidget {
+  const DetailBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Config().init(context);
+    return const Placeholder();
+  }
+}
+
+
+
+class DoctorInfo extends StatelessWidget {
+  const DoctorInfo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    Config().init(context);
+    return Row(
+      children: <Widget>[
+        Expanded(child:
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Config.primaryColor,
+          ),
+          padding: const EdgeInsets.symmetric(
+            vertical: 30,
+            horizontal: 15,
+          ),
+          child: Column(
+            children: const <Widget>[
+              Text('Patties', style: TextStyle(
+                color: Colors.black,
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+              ),
+              ),
+              SizedBox(height: 10,),
+              Text(
+                '109',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.w800,
+                ),
+              )
+            ],
+          ),
+        ))
+      ],
+    );
+
+  }
+}
+
+
+
+class InfoCard extends StatelessWidget {
+  const InfoCard({required this.label, required this.value ,super.key});
+
+  final String label;
+  final String value;
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
