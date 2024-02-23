@@ -30,9 +30,10 @@ class _DoctorDetailState extends State<DoctorDetail> {
               icon: FaIcon(isFav ? Icons.favorite_rounded : Icons.favorite_outline, color: Colors.red,))
         ],
       ),
-      body: SafeArea(child: Column(
-        children: <Widget>[
-          AboutDoctor(),
+      body:  SafeArea(
+        child:  Column(
+        children:  <Widget>[
+          AboutDoctor(), DetailBody(),
         ],
       )),
     );
@@ -65,8 +66,8 @@ class AboutDoctor extends StatelessWidget {
           ),
           Config.spaceSmall,
           SizedBox(
-            width: Config.widthSize * 0.75,
-            child: const Text(
+           
+            child: Text(
               'Universitas Trunojyo madura Pendidikan Informatika 2013',
               style: TextStyle(
                color: Colors.white,
@@ -89,7 +90,16 @@ class DetailBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Config().init(context);
-    return const Placeholder();
+    return Container(
+      padding: const EdgeInsets.all(20),
+      margin: const EdgeInsets.only(bottom: 30),
+      child: const Column(crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: const <Widget>[
+        Config.spaceSmall,
+        DoctorInfo(),
+      ],
+      ),
+    );
   }
 }
 
@@ -113,7 +123,7 @@ class DoctorInfo extends StatelessWidget {
             vertical: 30,
             horizontal: 15,
           ),
-          child: Column(
+          child: const Column(
             children: const <Widget>[
               Text('Patties', style: TextStyle(
                 color: Colors.black,
@@ -135,7 +145,6 @@ class DoctorInfo extends StatelessWidget {
         ))
       ],
     );
-
   }
 }
 
